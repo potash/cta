@@ -1,0 +1,3 @@
+The Chicago Transit Authority (CTA) bus tracker API provides bus positions updated in real time (once per minute) as well as rudimentary short term predictions. The purpose of this library is to capture, process and clean the position data for the purpose of long term analysis.
+
+The GetVehicles executable polls the API for data on the selected buses and stores it in the database. In practice this is scheduled as a cron job. Meanwhile the ProcessVehicles executable is a daemon which picks up the data in the database and processes it into bus runs, deleting duplicates and culling the often bogus data that the API publishes.
